@@ -6,7 +6,7 @@ MAKE=make -j 10 -C ../../ ARCH=$(ARCH) CROSS_COMPILE=arm-linux-gnueabihf-
 
 all:
 	rm -f ../../.config && \
-	$(MAKE) bcm2709_defconfig && \
+	$(MAKE) $(CONFIG) && \
 	$(MAKE) $(IMAGE) modules dtbs && \
 	$(MAKE) INSTALL_MOD_PATH=$(shell pwd) modules_install && \
 	mkdir -p ./boot && \
